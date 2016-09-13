@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="displayPreferences"
+    android:title="Show / Hide Banks">
+    <CheckBoxPreference
+        android:defaultValue="True"
+        android:key="Packaging"
+        android:summary="Toggle packaging banks on the map"
+        android:title="Packaging Toggle" />
+    <CheckBoxPreference
+        key="Paper"
+        defaultValue="True" />
+    <CheckBoxPreference
+        key="Textiles"
+        android:defaultValue="True" />
+    <CheckBoxPreference
+        android:defaultValue="True"
+        android:key="Bottles"
+        android:summary="Toggle glass banks on the map"
+        android:title="Bottle Banks" />
+
+    <CheckBoxPreference
+        android:defaultValue="True"
+        android:key="Others"
+        android:summary="Toggle cans compost, books on the map"
+        android:title="Paper Banks" />
+</PreferenceScreen>
+

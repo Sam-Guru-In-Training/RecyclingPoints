@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.quakereport.EarthquakeActivity">
+    <item
+        android:id="@+id/action_report_full_bank"
+        android:title="@string/report_full_bank"
+        android:icon="@drawable/ic_sad_face2"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_change_search_radius"
+        android:title="@string/change_search_radius"
+        android:icon="@drawable/ic_filter_square"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_set_new_home_location"
+        android:title="@string/overflow_set_new_home_location"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_features_poll"
+        android:title="@string/overflow_new_features_poll"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_feedback"
+        android:title="@string/overflow_feedback"
+        android:icon="@drawable/ic_loud_speaker"
+        app:showAsAction="never" />
+</menu>

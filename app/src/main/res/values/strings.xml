@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Recycle Banks Edinburgh</string>
+    <string name="no_banks_downloaded_text">No recycle banks found</string>
+    <string name="paper_banks">paper banks</string>
+    <string name="packaging_banks">packaging banks</string>
+    <string name="bottle_banks">bottle banks</string>
+    <string name="can_banks_book_banks_food_banks">can banks, book banks, food banks</string>
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <string name="report_full_bank">Report full bank</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">Settings</string>
+    <!-- Strings For distance from home Preference [CHAR LIMIT=30] -->
+    <string name="settings_distance_from_home_label">Maximum distance from home in meters</string>
+    <string name="settings_distance_from_home_key" translatable="true">max_radius</string>
+    <string name="settings_distance_from_home_default" translatable="true">1000</string>
+
+    <!-- Label for setting a new address to search around [CHAR LIMIT=20] -->
+    <string name="settings_set_location_label">The location searched around</string>
+    <string name="settings_saved_location_value" translatable="false">home location</string>
+    <string name="overflow_feedback">feedback</string>
+    <string name="overflow_report_new_bank">report new bank</string>
+    <string name="overflow_report_vanished_bank">report vanished bank</string>
+    <string name="overflow_set_new_home_location">set new home location</string>
+    <string name="overflow_new_features_poll">new features poll</string>
+    <string name="change_search_radius">search radius</string>
+    <string name="poll_title">Feature Poll</string>
+    <string name="webview_feedback">email feedback on App</string>
+    <string name="webview_actionbar_title">enter details</string>
+    <string name="textile_banks">textile banks</string>
+</resources>
