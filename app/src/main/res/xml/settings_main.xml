@@ -9,5 +9,17 @@
         android:selectAllOnFocus="true"
         android:title="@string/settings_distance_from_home_label" />
 
+    <CheckBoxPreference android:key="@string/settings_gps_key"
+        android:title="@string/settings_gps"
+        android:defaultValue="@string/settings_gps_default" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_home_default"
+        android:inputType="text"
+        android:key="@string/settings_set_home_location_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_home_label"
+        android:summary="Set home location manually" />
+
 
 </PreferenceScreen>

@@ -12,9 +12,14 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
+
+     If your project is configured for multidex with minSdkVersion 20 or lower, and you deploy to
+     target devices running Android 4.4 (API level 20) or lower, Android Studio disables Instant Run
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.quakereport">
+    package="com.example.android.recyclingbanks">
+    <uses-sdk android:minSdkVersion="19"
+        android:targetSdkVersion="24"/>
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true"/>
@@ -32,22 +37,33 @@
         android:icon="@drawable/ic_recycle_bin"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
+        <service
+            android:name="com.example.android.recyclingbanks.FetchAddressIntentService"
+            android:exported="false"/>
         <activity
-        android:name=".SettingsActivity"
+        android:name="com.example.android.recyclingbanks.SettingsActivity"
         android:label="@string/settings_title">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.android.quakereport.EarthquakeActivity"/>
+            android:value="com.example.android.recyclingbanks.MainActivity"/>
     </activity>
         <activity
-            android:name=".WebViewActivity"
+            android:name="com.example.android.recyclingbanks.WebViewActivity"
             android:label="@string/webview_actionbar_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.quakereport.EarthquakeActivity"/>
+                android:value="com.example.android.recyclingbanks.MainActivity"/>
         </activity>
-        <activity android:name=".EarthquakeActivity">
+        <activity
+            android:name="com.example.android.recyclingbanks.StreetViewFragment"
+            android:label="@string/streetView_actionbar_title">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.recyclingbanks.MainActivity"/>
+        </activity>
+        <activity android:name="com.example.android.recyclingbanks.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

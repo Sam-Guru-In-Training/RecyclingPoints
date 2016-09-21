@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.recyclingbanks;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -65,7 +65,7 @@ public class WebViewActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_webview_feedback) {
             String[] addresses = new String[1];
-            composeEmail(addresses, "Suggestions for Edinburgh Recycle App");
+            composeEmail(addresses, "Suggestions for Edinburgh Recycle App, from full bank");
             return true;
         }
         return super.onOptionsItemSelected(item);

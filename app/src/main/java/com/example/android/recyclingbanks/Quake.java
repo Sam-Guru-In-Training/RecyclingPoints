@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.recyclingbanks;
 
 import com.google.android.gms.maps.model.LatLng;
 

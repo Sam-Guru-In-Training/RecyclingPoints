@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.recyclingbanks;
 
 import android.location.Location;
 import android.text.TextUtils;
@@ -90,7 +90,7 @@ public final class QueryUtils {
 //        return extractFeatureFromJson2(jsonResponse, distanceFromHome);
 //    }
 
-    public static Boolean extractBanksList(InputStream is, int distanceFromHome) {
+    public static Boolean extractBanksList(InputStream is, int distanceFromHome, Double homeLatitude, Double homeLongitude) {
         String jsonResponse = null;
         try {
             //AssetManager assetManager = getBaseContext().getAssets();
@@ -104,7 +104,8 @@ public final class QueryUtils {
             ex.printStackTrace();
             return null;
         }
-        return extractFeatureFromJson2(jsonResponse, distanceFromHome);
+
+        return extractFeatureFromJson2(jsonResponse, distanceFromHome, homeLatitude, homeLongitude);
     }
     /**
      * Returns new URL object from the given string URL.
@@ -175,9 +176,10 @@ public final class QueryUtils {
     /**
      * Takes raw JSON, modifies multiple lists, returns false if can't get a JSON file
      * @param earthquakeJSON
-     * @return a boolean, false if no JSON to process
+     * @param homeLatitude
+     *@param homeLongitude @return a boolean, false if no JSON to process
      */
-    private static boolean extractFeatureFromJson2(String earthquakeJSON, int distanceFromHome) {
+    private static boolean extractFeatureFromJson2(String earthquakeJSON, int distanceFromHome, Double homeLatitude, Double homeLongitude) {
         String LOG_TAG = "extracting Features";
         // If the JSON string is empty or null, then return early.
 
@@ -219,14 +221,20 @@ public final class QueryUtils {
 
             // setup my HOUSE
             //LatLng myPresentLocation = new LatLng(55.942835, -3.218902);
+            // TODO what is this for?
             Location myPresentLocation = new Location("");
             myPresentLocation.setLatitude(55.942835);
-            double homeLatitude = 55.942835;
             myPresentLocation.setLongitude(-3.218902);
-            double homeLongitude = -3.218902;
+
+//            double homeLatitude = 55.942835;
+//            double homeLongitude = -3.218902;
             LatLng houseLatLng = new LatLng(homeLatitude, homeLongitude);
-            // make house marker available for placing on map
-            buildMyHouse(houseLatLng);
+//            // make house marker available for placing on map
+//            buildMyHouse(houseLatLng);
+            // TODO have to pass them through, ARGGG!
+//            SharedPreferences sharedPrefs = getDefaultSharedPreferences(this);
+//            Double mUserLatitude = Double.valueOf(mSharedPrefs.getString("manualLatitude", "55.9532520"));
+//            Double mUserLongitude = Double.valueOf(mSharedPrefs.getString("manualLatitude", "-3.1882670"));
 
             // create a flag for many banks at same location
             Boolean cluster = false;
@@ -267,7 +275,7 @@ public final class QueryUtils {
                         Arrays.fill(bankTypesArray, Boolean.FALSE);
                         bankTypesArray = recordBankTypes(bank_type, bankTypesArray);
 
-                        //TODO potential invisible error in EarthquakeActivity
+                        //TODO potential invisible error in MainActivity
                         // make sure when getting from mapBankTypes we lookup using compost Bins
                     }
                     //Log.w("BANK Cluster", bank_type);
@@ -373,11 +381,10 @@ public final class QueryUtils {
     private static MarkerOptions buildAmarker(LatLng location, String bankType, String locationDetails,
                                               float markerColour) {
 
-        MarkerOptions binMarker = new MarkerOptions().position(location).title(bankType)
+        return new MarkerOptions().position(location).title(bankType)
                 .snippet(locationDetails)
                 .icon(BitmapDescriptorFactory.defaultMarker(markerColour));
         //.snippet(siteName + " | " + locationDetails);
-        return binMarker;
     }
     private static void buildMyHouse(LatLng location) {
         // TODO need to scale to be larger
@@ -538,5 +545,4 @@ public final class QueryUtils {
         }
         return output.toString();
     }
-
 }

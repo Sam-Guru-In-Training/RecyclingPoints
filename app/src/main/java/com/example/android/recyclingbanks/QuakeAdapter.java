@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.recyclingbanks;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;

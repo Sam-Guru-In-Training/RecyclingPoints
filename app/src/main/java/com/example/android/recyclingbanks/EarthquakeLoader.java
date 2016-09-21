@@ -1,4 +1,4 @@
-package com.example.android.quakereport;
+package com.example.android.recyclingbanks;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
@@ -15,15 +15,19 @@ public class EarthquakeLoader extends AsyncTaskLoader<Boolean> {
     //InputStream mIS;
     //private String mUrl;
     private int distanceFromHome;
+    private Double homeLatitude;
+    private Double homeLongitude;
     private final String LOG_TAG = EarthquakeLoader.class.getName();
 
     //public EarthquakeLoader(Context context, String url, int maxRadius) {
-    public EarthquakeLoader(Context context, int maxRadius) {
+    public EarthquakeLoader(Context context, int maxRadius, Double mUserLatitude, Double mUserLongitude) {
         super(context);
         Log.i(LOG_TAG, "!!!! creating a new EarthquakeLoader, loading context, assigning URL");
         //mUrl = url;
         //mIS = is;
         distanceFromHome = maxRadius;
+        homeLatitude = mUserLatitude;
+        homeLongitude = mUserLongitude;
         //mUrl = "http://data.edinburghopendata.info/api/action/datastore_search?resource_id=4cfb5177-d3db-4efc-ac6f-351af75f9f92&limit=500";g
     }
 
@@ -55,7 +59,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<Boolean> {
             return true;
         }
         Boolean noMarkers = true;
-        noMarkers = QueryUtils.extractBanksList(is, distanceFromHome);
+        noMarkers = QueryUtils.extractBanksList(is, distanceFromHome, homeLatitude, homeLongitude);
         Log.i(LOG_TAG, "!!!! loadInBackground returning masterBanksList list from QueryUtils");
         return noMarkers; //globalBanksList;
     }
