@@ -29,12 +29,12 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -84,6 +84,8 @@ import static com.google.android.gms.common.api.GoogleApiClient.OnConnectionFail
 import static com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import static com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import static com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+
+//import com.squareup.picasso.Picasso;
 
 //import static com.google.android.gms.analytics.internal.zzy.i;
 
